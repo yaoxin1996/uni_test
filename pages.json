@@ -3,14 +3,56 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true,
+				"backgroundTextStyle": "light"
+			}
+		}, {
+			"path": "pages/message/message",
+			"style": {
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#666666",
+						"titleColor": "#f6f6f6"
+					},
+					"pullToRefresh": {
+						"color": "#f2f2f2"
+					}
+				}
 			}
 		}
 	],
+  "tabBar": {
+    "color":"#666",
+    "backgroundColor":"#f2f2f2",
+    "list": [{
+      "text":"首页",
+      "iconPath":"static/icon/home.png",
+      "selectedIconPath":"static/icon/home-active.png",
+      "pagePath":"pages/index/index"
+    }, {
+      "text":"社区",
+      "iconPath":"static/icon/shequ.png",
+      "selectedIconPath":"static/icon/shequ-active.png",
+      "pagePath":"pages/message/message"
+    }]
+  },
+  "condition": {
+    "current": 1,
+    "list":[{
+      "name": "home",
+      "path":"pages/index/index",
+      "query":"username=zhangsan&password=admin"
+    }, {
+      "name":"shequ",
+      "path":"pages/message/message"
+    }]
+  },
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "测试",
+		"navigationBarBackgroundColor": "#01bcff",
 		"backgroundColor": "#F8F8F8"
 	}
 }

@@ -1,0 +1,1 @@
+<view class="content"><text selectable="{{true}}" space="nbsp" decode="{{false}}">须知少时凌云志，曾许人间第一流</text><view class="div" hover-class="hover"><view class="div1" hover-stop-propagation="{{true}}" hover-start-time="1000" hover-stay-time="500" hover-class="hover-div1"></view></view><button type="primary">点击</button><image src mode></image></view>
