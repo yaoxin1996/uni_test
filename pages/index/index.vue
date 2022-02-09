@@ -10,9 +10,12 @@
         hover-stay-time="500"
         hover-class="hover-div1"></view>
     </view>
-    <button type="primary" v-on:click="clickBtn">点击</button>
+    <button type="primary" v-on:click="clickBtn(5, $event)">点击</button>
     <image src="../../static/a.jpg" mode="widthFix"></image>
-    
+    <view v-for="(item,index) in arr" :key="index">
+		{{ item }}
+    </view>
+    <button type="default" @click="send">发送请求</button>
 	</view>
 </template>
 
@@ -21,15 +24,38 @@
 		data() {
 			return {
 				title: 'Hello',
-        dis: true
+				dis: true,
+				arr: [1, 2, 3, 5, 8]
 			}
 		},
 		onLoad() {
 
 		},
+    onPullDownRefresh() {
+      console.log('下拉刷新')
+      setTimeout(() => {
+        this.arr = ['罗', '飞', '大', '魔', '王']
+        uni.stopPullDownRefresh()
+      }, 500)
+    },
+    onReachBottom() {
+      console.log('触底了')
+      this.arr.push('罗', '飞')
+    },
 		methods: {
-      clickBtn () {
-        console.log(1111)
+      clickBtn (doc, e) {
+        uni.startPullDownRefresh()
+        uni.removeStorageSync('res')
+      },
+      send () {
+        uni.request({
+          url:'http://127.0.0.1:3000/uni',
+          method:'GET',
+          success(res) {
+            console.log(res)
+            uni.setStorageSync('res', res.data)
+          }
+        })
       }
 		}
 	}
