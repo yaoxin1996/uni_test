@@ -3,56 +3,42 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "首页",
 				"enablePullDownRefresh": true,
 				"backgroundTextStyle": "light"
 			}
-		}, {
-			"path": "pages/message/message",
-			"style": {
-				"enablePullDownRefresh": true,
-				"h5": {
-					"titleNView": {
-						"backgroundColor": "#666666",
-						"titleColor": "#f6f6f6"
-					},
-					"pullToRefresh": {
-						"color": "#f2f2f2"
-					}
-				}
-			}
-		}
-	],
+    }
+  ],
   "tabBar": {
-    "color":"#666",
-    "backgroundColor":"#f2f2f2",
-    "list": [{
-      "text":"首页",
-      "iconPath":"static/icon/home.png",
-      "selectedIconPath":"static/icon/home-active.png",
-      "pagePath":"pages/index/index"
-    }, {
-      "text":"社区",
-      "iconPath":"static/icon/shequ.png",
-      "selectedIconPath":"static/icon/shequ-active.png",
-      "pagePath":"pages/message/message"
-    }]
-  },
-  "condition": {
-    "current": 1,
-    "list":[{
-      "name": "home",
-      "path":"pages/index/index",
-      "query":"username=zhangsan&password=admin"
-    }, {
-      "name":"shequ",
-      "path":"pages/message/message"
-    }]
+    "color":"#ccc",
+    "selectedColor":"#c41d01",
+    "list": [
+      {
+        "iconPath":"static/icon/home.png",
+        "pagePath":"pages/index/index",
+        "selectedIconPath":"static/icon/home-active.png",
+        "text":"首页"
+      }, {
+        "iconPath":"static/icon/news.png",
+        "selectedIconPath":"static/icon/news-active.png",
+        "pagePath":"pages/news/news",
+        "text":"资讯"
+      }, {
+        "iconPath":"static/icon/cart.png",
+        "selectedIconPath":"static/icon/cart-active.png",
+        "pagePath":"pages/cart/cart",
+        "text":"购物车"
+      }, {
+        "iconPath":"static/icon/member.png",
+        "selectedIconPath":"static/icon/member-active.png",
+        "pagePath":"pages/member/member",
+        "text":"会员"
+      }
+    ]
   },
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "测试",
-		"navigationBarBackgroundColor": "#01bcff",
+		"navigationBarTitleText": "商城",
+		"navigationBarBackgroundColor": "#c41d01",
 		"backgroundColor": "#F8F8F8"
 	}
 }

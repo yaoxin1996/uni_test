@@ -1,4 +1,6 @@
 import App from './App'
+// import { myRequest } from 'utils/api.js'
+// Vue.prototype.$myRequest = myRequest
 
 // #ifndef VUE3
 import Vue from 'vue'

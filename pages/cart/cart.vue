@@ -1,5 +1,4 @@
 <template>
-	<view>message</view>
 </template>
 
 <script>
