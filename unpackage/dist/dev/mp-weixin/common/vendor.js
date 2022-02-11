@@ -8776,6 +8776,40 @@ function normalizeComponent (
 }
 
 
+/***/ }),
+/* 12 */
+/*!*********************************************!*\
+  !*** D:/practise/uni-app-test/utils/api.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var baseURL = 'https://api-hmugo-web.itheima.net/api/public/v1';
+var myRequest = function myRequest(options) {
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: baseURL + options.url,
+      method: options.method || 'GET',
+      data: options.data || {},
+      success: function success(res) {
+        if (res.data.status == 0) {
+          uni.showToast({
+            title: '请求失败' });
+
+        } else {
+          resolve(res.data);
+        }
+      },
+      fail: function fail(err) {
+        reject(err);
+      } });
+
+  });
+};var _default =
+myRequest;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
 /***/ })
 ]]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

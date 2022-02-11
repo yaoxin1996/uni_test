@@ -1,0 +1,1 @@
+<view class="goods-list"><block wx:if="{{item.goods_big_logo}}"><view class="rec-item"><view class="rec-img"><image src="{{item.goods_big_logo}}" mode></image></view><text class="rec-cur-price">{{"￥"+item.goods_price}}</text><text class="rec-old-price">{{"￥"+(item.goods_price-500)}}</text><view class="rec-title">{{item.goods_name}}</view></view></block></view>

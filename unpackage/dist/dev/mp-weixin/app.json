@@ -1,33 +1,50 @@
 {
   "pages": [
+    "pages/cart/cart",
+    "pages/news/news",
+    "pages/member/member",
     "pages/index/index",
-    "pages/message/message"
+    "pages/shop/shop",
+    "pages/contactus/contactus",
+    "pages/community/community",
+    "pages/learnvideo/learnvideo"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "测试",
-    "navigationBarBackgroundColor": "#01bcff",
+    "navigationBarTitleText": "商城",
+    "navigationBarBackgroundColor": "#c41d01",
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
-    "color": "#666",
-    "backgroundColor": "#f2f2f2",
+    "color": "#ccc",
+    "selectedColor": "#c41d01",
     "list": [
       {
-        "text": "首页",
         "iconPath": "static/icon/home.png",
+        "pagePath": "pages/index/index",
         "selectedIconPath": "static/icon/home-active.png",
-        "pagePath": "pages/index/index"
+        "text": "首页"
       },
       {
-        "text": "社区",
-        "iconPath": "static/icon/shequ.png",
-        "selectedIconPath": "static/icon/shequ-active.png",
-        "pagePath": "pages/message/message"
+        "iconPath": "static/icon/news.png",
+        "selectedIconPath": "static/icon/news-active.png",
+        "pagePath": "pages/news/news",
+        "text": "资讯"
+      },
+      {
+        "iconPath": "static/icon/cart.png",
+        "selectedIconPath": "static/icon/cart-active.png",
+        "pagePath": "pages/cart/cart",
+        "text": "购物车"
+      },
+      {
+        "iconPath": "static/icon/member.png",
+        "selectedIconPath": "static/icon/member-active.png",
+        "pagePath": "pages/member/member",
+        "text": "会员"
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

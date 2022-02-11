@@ -55,19 +55,7 @@
       "list": []
     },
     "miniprogram": {
-      "list": [
-        {
-          "name": "home",
-          "query": "username=zhangsan&password=admin",
-          "id": 0,
-          "pathName": "pages/index/index"
-        },
-        {
-          "name": "shequ",
-          "id": 1,
-          "pathName": "pages/message/message"
-        }
-      ]
+      "list": []
     }
   }
 }

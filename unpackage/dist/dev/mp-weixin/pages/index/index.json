@@ -1,6 +1,7 @@
 {
-  "navigationBarTitleText": "首页",
   "enablePullDownRefresh": true,
   "backgroundTextStyle": "light",
-  "usingComponents": {}
+  "usingComponents": {
+    "goods": "/components/goods_list/goods_list"
+  }
 }

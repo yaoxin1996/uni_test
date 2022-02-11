@@ -11,10 +11,8 @@
     <!-- E 轮播图 -->
     <!-- S 导航区域 -->
     <view class="nav-box">
-      <view class="nav-item" v-for="item in navList" :key="item.image_src">
-        <!-- <view class="nav-icon iconfont" :class="item.image_src"></view> -->
+      <view class="nav-item" v-for="(item, index) in navList" :key="item.image_src" @click="navClick(index)">
         <image class="nav-icon" :src="item.image_src" mode=""></image>
-        <!-- <view class="nav-title">{{ item.name }}</view> -->
       </view>
     </view>
     <!-- E 导航区域 -->
@@ -23,14 +21,7 @@
       <view class="title">推荐商品</view>
       <view class="rec-box">
         <block v-for="item in goods" :key="item.goods_id">
-          <view class="rec-item" v-if="item.goods_big_logo">
-            <view class="rec-img">
-              <image :src="item.goods_big_logo" mode=""></image>
-            </view>
-            <text class="rec-cur-price">￥{{ item.goods_price }}</text>
-            <text class="rec-old-price">￥{{ item.goods_price - 500 }}</text>
-            <view class="rec-title">{{ item.goods_name }}</view>
-          </view>
+          <goods :item="item"></goods>
         </block>
       </view>
     </view>
@@ -39,7 +30,11 @@
 </template>
 
 <script>
+  import goods from '../../components/goods_list/goods_list.vue'
   export default {
+    components: {
+      goods
+    },
     data () {
     	return {
         swiperList: [],
@@ -51,7 +46,6 @@
     methods:{
       // 获取轮播图数据
       getSwiperList () {
-        console.log(this.$myRequest)
         this.$myRequest({
           url: '/home/swiperdata',
         }).then(res => {
@@ -77,6 +71,31 @@
         }).then(res => {
           this.goods = res.message.goods
         })
+      },
+      // 点击导航跳转
+      navClick (index) {
+        console.log(index)
+        if (index == 0) {
+          // 超市
+          uni.navigateTo({
+            url:"../shop/shop"
+          })
+        } else if (index == 1) {
+          // 联系我们
+          uni.navigateTo({
+            url:"../contactus/contactus"
+          })
+        } else if (index == 2) {
+          // 社区
+          uni.navigateTo({
+            url:"../community/community"
+          })
+        } else {
+          // 学习视频
+          uni.navigateTo({
+            url:"../learnvideo/learnvideo"
+          })
+        }
       }
     },
     onLoad() {
@@ -130,41 +149,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        .rec-item {
-          width: 350rpx;
-          background: #fff;
-          margin: 10rpx 0;
-          padding: 15rpx;
-          box-sizing: border-box;
-          border-radius: 10rpx;
-          .rec-img {
-            width: 100%;
-            margin-bottom: 10rpx;
-            image {
-              width: 100%;
-              height: 150px;
-            }
-          }
-          .rec-cur-price {
-            color: $uni-color-primary;
-            font-size: 36rpx;
-          }
-          .rec-old-price {
-            color: #ccc;
-            font-size: 28rpx;
-            text-decoration: line-through;
-            margin-left: 20rpx;
-          }
-          .rec-title {
-            width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-size: 28rpx;
-            line-height: 50rpx;
-            padding: 10rpx 0;
-          }
-        }
       }
     }
   }
