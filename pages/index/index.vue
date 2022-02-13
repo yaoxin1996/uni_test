@@ -21,7 +21,7 @@
       <view class="title">推荐商品</view>
       <view class="rec-box">
         <block v-for="item in goods" :key="item.goods_id">
-          <goods :item="item"></goods>
+          <goods :item="item" @show="goToDetail"></goods>
         </block>
       </view>
     </view>
@@ -96,6 +96,13 @@
             url:"../learnvideo/learnvideo"
           })
         }
+      },
+      // 查看详情
+      goToDetail (id) {
+        console.log(id)
+        uni.navigateTo({
+          url: '../goodsdetail/goodsdetail?id=' + id
+        })
       }
     },
     onLoad() {

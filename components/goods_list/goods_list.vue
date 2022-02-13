@@ -1,6 +1,6 @@
 <template>
   <view class="goods-list">
-    <view class="rec-item" v-if="item.goods_big_logo">
+    <view class="rec-item" v-if="item.goods_big_logo" @click="showDetail(item.goods_id)">
       <view class="rec-img">
         <image :src="item.goods_big_logo" mode=""></image>
       </view>
@@ -13,7 +13,12 @@
 
 <script>
   export default {
-    props: ['item']
+    props: ['item'],
+    methods: {
+      showDetail (id) {
+        this.$emit('show', id)
+      }
+    }
   }
 </script>
 
